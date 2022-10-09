@@ -1,0 +1,7 @@
+host: "localhost"
+port: 3306
+database: "Kaede_information"
+username: "user"
+password: "root"
+user_list: "user_list"
+dig_log: "dig_log"
