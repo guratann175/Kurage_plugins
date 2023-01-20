@@ -18,7 +18,7 @@ public class EventsClass implements Listener {
     }
 
     @EventHandler
-    /*ブロックを壊したときのイベント*/
+    /*ブロックを壊したときのイベント BlockBreakEvent*/
     public void onBreakBlock(BlockBreakEvent event) {
         Random rnd = new Random();
         Block block = event.getBlock();

@@ -52,6 +52,7 @@ public class Command implements CommandExecutor {
 
                 }
 
+                // 採掘数を表示するコマンド
             } else if (cmd.getName().equalsIgnoreCase(cmd2)) {
 
                 Kaede_Solutions plugin = Kaede_Solutions.getPlugin(Kaede_Solutions.class);

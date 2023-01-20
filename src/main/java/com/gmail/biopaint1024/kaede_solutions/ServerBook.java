@@ -17,6 +17,8 @@ public class ServerBook implements Listener {
     public void join(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         String nl = "\n";
+
+        // 本を作る
         ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
 
         BookMeta bookmeta = (BookMeta) book.getItemMeta();
@@ -26,10 +28,12 @@ public class ServerBook implements Listener {
         ArrayList<String> pages = new ArrayList<String>();
 
         pages.add(ChatColor.DARK_GREEN + "1:ダイアモンドを投げると、爆発する" + nl +
-                "2:explodeコマンドで雷を落とす");
+                "2:explodeコマンドで座標を確認する");
         bookmeta.setPages(pages);
         book.setItemMeta(bookmeta);
-        player.getInventory().addItem(book);
+
+        // プレイヤーにアイテムを与える
+        // player.getInventory().addItem(book);
     }
 
 }

@@ -2,8 +2,6 @@ package com.gmail.biopaint1024.kaede_solutions;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.Connection;
@@ -16,7 +14,7 @@ public final class Kaede_Solutions extends JavaPlugin {
     private final Command commands = new Command();
 
     private Connection connection;
-    public String host, database, username, password, user_list, dig_log;
+    public String host, database, username, password, user_list, user_log;
     public int port;
 
     @Override
@@ -53,7 +51,7 @@ public final class Kaede_Solutions extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveConfig();
     }
-
+    // SQL使用のためのセットアップ---------------------------------------------------------
     public void mysqlSetup() {
         host = this.getConfig().getString("host");
         port = this.getConfig().getInt("port");
@@ -61,7 +59,7 @@ public final class Kaede_Solutions extends JavaPlugin {
         username = this.getConfig().getString("username");
         password = this.getConfig().getString("password");
         user_list = this.getConfig().getString("user_list");
-        dig_log = this.getConfig().getString("dig_log");
+        user_log = this.getConfig().getString("user_log");
 
         try {
 
@@ -90,6 +88,7 @@ public final class Kaede_Solutions extends JavaPlugin {
         this.connection = connection;
     }
 
+    // サーバーを閉じるときの処理------------------------------------------------------------------
     @Override
     public void onDisable() {
         // Plugin shutdown logic
