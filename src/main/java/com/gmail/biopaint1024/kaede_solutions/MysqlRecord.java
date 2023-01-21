@@ -14,6 +14,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.UUID;
+/**
+ * データベースの生成
+ */
 
 public class MysqlRecord implements Listener {
 
@@ -79,7 +82,7 @@ public class MysqlRecord implements Listener {
     }
 
     @EventHandler
-    /*ブロックを壊したときのイベント*/
+    /*ブロックを壊したときのイベント データベースの値を更新*/
     public void onBlock(BlockBreakEvent event) {
         Player player = event.getPlayer();
         Block block = event.getBlock();

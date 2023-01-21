@@ -32,7 +32,7 @@ public class ItemUseSystem implements Listener {
 
         //もし右クリックされたら、
         if (action.equals(Action.RIGHT_CLICK_AIR) || action.equals(Action.RIGHT_CLICK_BLOCK)) {
-            // もし持っているアイテムが
+            // もし持っているアイテムが○○○○なら
             if (Item.getType().equals(Material.DIAMOND)) {
                 Item.setAmount(Item.getAmount() - 1);
                 ItemStack bomb = new ItemStack(Item.getType(), 1);

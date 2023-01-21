@@ -6,12 +6,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 import java.util.Random;
 
-public class EventsClass implements Listener {
+public class GatyaEvent implements Listener {
 
     @EventHandler
     public void onPunch(PlayerInteractEvent event){
@@ -32,7 +31,7 @@ public class EventsClass implements Listener {
          */
 
         if (block.getType().equals(Material.STONE)) {
-            if (rnd.nextInt(10) < 2) {
+            if (rnd.nextInt(100) < 1) {
                 CustomItem.giveItem(player);
             }
         }

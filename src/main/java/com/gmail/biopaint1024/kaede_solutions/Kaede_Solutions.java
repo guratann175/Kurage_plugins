@@ -30,7 +30,7 @@ public final class Kaede_Solutions extends JavaPlugin {
                 "\n");
 
         //イベントクラスの読み込み
-        getServer().getPluginManager().registerEvents(new EventsClass(), this);
+        getServer().getPluginManager().registerEvents(new GatyaEvent(), this);
         getServer().getPluginManager().registerEvents(new MessageEvent(), this);
         getServer().getPluginManager().registerEvents(new ItemUseSystem(), this);
         getServer().getPluginManager().registerEvents(new ScoreBoard(), this);
@@ -45,12 +45,14 @@ public final class Kaede_Solutions extends JavaPlugin {
         mysqlSetup();
 
         this.getServer().getPluginManager().registerEvents(new MysqlRecord(), this);
+
     }
 
     public void loadConfig(){
         getConfig().options().copyDefaults(true);
         saveConfig();
     }
+
     // SQL使用のためのセットアップ---------------------------------------------------------
     public void mysqlSetup() {
         host = this.getConfig().getString("host");
